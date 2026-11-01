@@ -22,7 +22,7 @@ def decide(src, dport):
 
 server = socket.socket()
 server.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
-server.bind((HOST, CONTROLLER_PORT))
+server.bind(("0.0.0.0", CONTROLLER_PORT))
 server.listen()
 print(f"Controller listening on {CONTROLLER_PORT}...")
 

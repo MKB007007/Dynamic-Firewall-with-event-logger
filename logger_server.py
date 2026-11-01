@@ -4,7 +4,7 @@ from common import HOST, LOGGER_PORT
 
 server = socket.socket()
 server.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
-server.bind((HOST, LOGGER_PORT))
+server.bind(("0.0.0.0", LOGGER_PORT))
 server.listen()
 print(f"Logger server listening on {LOGGER_PORT}...")
 
