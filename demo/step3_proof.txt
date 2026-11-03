@@ -1,0 +1,6 @@
+sh echo "=== STEP 3: attacker is blocked even on the allowed port ==="
+h2 curl -m 3 -s -o /dev/null -w "attacker -> server: HTTP %{http_code} (000 = blocked)\n" 10.0.0.3:9000
+sh echo "=== alice is unaffected ==="
+h1 curl -m 3 -s -o /dev/null -w "alice -> server: HTTP %{http_code}\n" 10.0.0.3:9000
+sh echo "=== Security event log ==="
+sh cat demo/security_events.log
